@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        /*
+            Pseudo code:
+            First create system to promt user to input choice of rock, paper, or scissors which must be a typed string of one of those three choices and must be caseinsensitive.
+            Make case insensitive by translating all user inputed strings to be lowercase in code to be compared to computer generated response.
+            Create algorithem to randomly pick between 3 values( 1, 2, and 3) that correspond to it choosing randomly between r,p,s.
+            Convert value generated( 1, 2, and 3) to strings ( rock, paper, and scissors) so to be compared equally.
+            create algorithm to compare values to eachother and respond accordingly depending on if the user wins, loses, or draws.
+        */
+
+        
+
+        let choices = ["rock", "paper", "scissors"];
+
+        //Prompts user to choose between rock, paper, or scissors.
+        function pickChoice () {
+            playerChoice = prompt("choose between Rock, Paper, or Scissors.");
+            
+            if( playerChoice === "rock" || playerChoice === "paper" || playerChoice === "scissors" ) {
+                return playerChoice;
+            }else{
+                console.log(" you must choose rock, paper, or scissors")
+                return;
+            }
+        }
+
+        playerChoice = pickChoice();
+         
+        console.log(playerChoice);
+    </script>
+</body>
+</html>
