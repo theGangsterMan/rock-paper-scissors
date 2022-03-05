@@ -41,6 +41,7 @@
             }
         }
 
+        //picks 1,2,3 and converty it to rock,paper,scissors
         function computerPlay() {
             let mathValue = Math.ceil(Math.random() * 3);
             
@@ -53,6 +54,7 @@
             }
         }
 
+        //determines if player or computer won.
         function computeWinner() {
 
             if( playerChoice === "rock" ) {
@@ -86,14 +88,20 @@
             }
 
         }
+        
+        //runs all fucntions and logs them to play and show results of the game
+        function playGame()  {
 
-        playerChoice = pickChoice();
-        computerChoice = computerPlay();
-        let winner = computeWinner();
+            playerChoice = pickChoice();
+            computerChoice = computerPlay();
+            let winner = computeWinner();
+            console.log(playerChoice);
+            console.log(computerChoice);
+            console.log(winner);
+
+        }
          
-        console.log(playerChoice);
-        console.log(computerChoice);
-        console.log(winner);
+        playGame();
 
         
     </script>
