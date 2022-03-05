@@ -22,12 +22,17 @@
 
         let choices = ["rock", "paper", "scissors"];
 
+        let victoryMessage = "Congradulations, you win!"
+        let loseMessage = "Get shreked, you lose!"
+        let drawMessage = "DRAW!"
+
         //Prompts user to choose between rock, paper, or scissors.
         function pickChoice () {
             playerChoice = prompt("choose between Rock, Paper, or Scissors.");
             
+            //makes user choice lower case to accurately compare to computer choice
             playerChoice = playerChoice.toLowerCase();
-            
+
             if( playerChoice === "rock" || playerChoice === "paper" || playerChoice === "scissors" ) {
                 return playerChoice;
             }else{
@@ -36,9 +41,61 @@
             }
         }
 
+        function computerPlay() {
+            let mathValue = Math.ceil(Math.random() * 3);
+            
+            if( mathValue === 1 ) {
+                return "rock";
+            }else if( mathValue === 2 ) {
+                return "paper";
+            }else {
+                return "scissors";
+            }
+        }
+
+        function computeWinner() {
+
+            if( playerChoice === "rock" ) {
+                if( computerChoice === "rock" ) {
+                    return drawMessage;
+                }else if( computerChoice === "paper" ) {
+                    return loseMessage;
+                }else {
+                    return victoryMessage;
+                }
+            }
+
+            if( playerChoice === "paper" ) {
+                if( computerChoice === "rock" ) {
+                    return victoryMessage;
+                }else if( computerChoice === "paper" ) {
+                    return drawMessage;
+                }else {
+                    return loseMessage;
+                }
+            }
+
+            if( playerChoice === "scissors" ) {
+                if( computerChoice === "rock" ) {
+                    return loseMessage;
+                }else if( computerChoice === "paper" ) {
+                    return victoryMessage;
+                }else {
+                    return drawMessage;
+                }
+            }
+
+        }
+
         playerChoice = pickChoice();
+        computerChoice = computerPlay();
+        let winner = computeWinner();
          
         console.log(playerChoice);
+        console.log(computerChoice);
+        console.log(winner);
+
+        
     </script>
 </body>
 </html>
