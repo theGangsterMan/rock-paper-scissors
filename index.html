@@ -26,6 +26,7 @@
         let loseMessage = "Get shreked, you lose!"
         let drawMessage = "DRAW!"
 
+
         //Prompts user to choose between rock, paper, or scissors.
         function pickChoice () {
             playerChoice = prompt("choose between Rock, Paper, or Scissors.");
@@ -89,8 +90,8 @@
 
         }
         
-        //runs all fucntions and logs them to play and show results of the game
-        function playGame()  {
+        //runs all fucntions and logs them to play and show results of a round
+        function playRound()  {
 
             playerChoice = pickChoice();
             computerChoice = computerPlay();
@@ -98,10 +99,44 @@
             console.log(playerChoice);
             console.log(computerChoice);
             console.log(winner);
+            return winner;
+            
 
         }
+
+        function game() {
+
+            let score = 0
+
+            for( i = 0; i < 5; i++ ) {
+                victor = playRound();
+
+                if( victor === victoryMessage ) {
+                score++;
+                }else if( victor === drawMessage ) {
+                    score = score + 0;
+                }else{
+                    score--;
+                }
+
+                console.log( 'current score: ' + score);
+            }
+
+            if( score > 0 ) {
+                console.log('congradulations, you win!');
+                return 'player';
+            }else if(score === 0 ) {
+                console.log('nobody wins, draw');
+                return 'draw';
+            }else{
+                console.log('you lose, computer wins!');
+                return 'computer';
+            }
+        }
+
+        let champion = game();
+        console.log('Champion: ' + champion);
          
-        playGame();
 
         
     </script>
