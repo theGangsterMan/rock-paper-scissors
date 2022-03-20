@@ -1,144 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
 </head>
+
 <body>
-    
-    <script>
-        /*
-            Pseudo code:
-            First create system to promt user to input choice of rock, paper, or scissors which must be a typed string of one of those three choices and must be caseinsensitive.
-            Make case insensitive by translating all user inputed strings to be lowercase in code to be compared to computer generated response.
-            Create algorithem to randomly pick between 3 values( 1, 2, and 3) that correspond to it choosing randomly between r,p,s.
-            Convert value generated( 1, 2, and 3) to strings ( rock, paper, and scissors) so to be compared equally.
-            create algorithm to compare values to eachother and respond accordingly depending on if the user wins, loses, or draws.
-        */
+    <h2>Computer Choice:<span id="computer-choice"></span></h2>
+    <h2>Your Choices:<span id="user-choice"></span></h2>
+    <h2>Result:<span id="result"></span></h2>
+    <h2>Player Score:<span id="player-score">0</span></h2>
+    <h2>Computer Score: <span id="computer-score">0</span></h2>
 
-        
-
-        let choices = ["rock", "paper", "scissors"];
-
-        let victoryMessage = "Congradulations, you win!"
-        let loseMessage = "Get shreked, you lose!"
-        let drawMessage = "DRAW!"
-
-
-        //Prompts user to choose between rock, paper, or scissors.
-        function pickChoice () {
-            playerChoice = prompt("choose between Rock, Paper, or Scissors.");
-            
-            //makes user choice lower case to accurately compare to computer choice
-            playerChoice = playerChoice.toLowerCase();
-
-            if( playerChoice === "rock" || playerChoice === "paper" || playerChoice === "scissors" ) {
-                return playerChoice;
-            }else{
-                console.log(" you must choose rock, paper, or scissors")
-                return;
-            }
-        }
-
-        //picks 1,2,3 and converty it to rock,paper,scissors
-        function computerPlay() {
-            let mathValue = Math.ceil(Math.random() * 3);
-            
-            if( mathValue === 1 ) {
-                return "rock";
-            }else if( mathValue === 2 ) {
-                return "paper";
-            }else {
-                return "scissors";
-            }
-        }
-
-        //determines if player or computer won.
-        function computeWinner() {
-
-            if( playerChoice === "rock" ) {
-                if( computerChoice === "rock" ) {
-                    return drawMessage;
-                }else if( computerChoice === "paper" ) {
-                    return loseMessage;
-                }else {
-                    return victoryMessage;
-                }
-            }
-
-            if( playerChoice === "paper" ) {
-                if( computerChoice === "rock" ) {
-                    return victoryMessage;
-                }else if( computerChoice === "paper" ) {
-                    return drawMessage;
-                }else {
-                    return loseMessage;
-                }
-            }
-
-            if( playerChoice === "scissors" ) {
-                if( computerChoice === "rock" ) {
-                    return loseMessage;
-                }else if( computerChoice === "paper" ) {
-                    return victoryMessage;
-                }else {
-                    return drawMessage;
-                }
-            }
-
-        }
-        
-        //runs all fucntions and logs them to play and show results of a round
-        function playRound()  {
-
-            playerChoice = pickChoice();
-            computerChoice = computerPlay();
-            let winner = computeWinner();
-            console.log(playerChoice);
-            console.log(computerChoice);
-            console.log(winner);
-            return winner;
-            
-
-        }
-
-        function game() {
-
-            let score = 0
-
-            for( i = 0; i < 5; i++ ) {
-                victor = playRound();
-
-                if( victor === victoryMessage ) {
-                score++;
-                }else if( victor === drawMessage ) {
-                    score = score + 0;
-                }else{
-                    score--;
-                }
-
-                console.log( 'current score: ' + score);
-            }
-
-            if( score > 0 ) {
-                console.log('congradulations, you win!');
-                return 'player';
-            }else if(score === 0 ) {
-                console.log('nobody wins, draw');
-                return 'draw';
-            }else{
-                console.log('you lose, computer wins!');
-                return 'computer';
-            }
-        }
-
-        let champion = game();
-        console.log('Champion: ' + champion);
-         
-
-        
-    </script>
+    <div id="buttons">
+        <button class = btn id="rock">rock</button>
+        <button class = btn id="paper">paper</button>
+        <button class = btn id="scissors">scissors</button>
+    </div>
+    <script src="app.js" charset="uft-8"></script>
 </body>
+
 </html>
