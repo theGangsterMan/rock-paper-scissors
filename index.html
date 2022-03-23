@@ -6,22 +6,37 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 
 </head>
 
 <body>
-    <h2>Computer Choice:<span id="computer-choice"></span></h2>
-    <h2>Your Choices:<span id="user-choice"></span></h2>
-    <h2>Result:<span id="result"></span></h2>
-    <h2>Player Score:<span id="player-score">0</span></h2>
-    <h2>Computer Score: <span id="computer-score">0</span></h2>
+    <div class="stuff">
 
-    <div id="buttons">
-        <button class = btn id="rock">rock</button>
-        <button class = btn id="paper">paper</button>
-        <button class = btn id="scissors">scissors</button>
+        <div class="game-stats">
+
+            <div class="choices-displayed">
+                <h2>Computer Choice:  <span id="computer-choice"></span></h2>
+                <h2>Your Choices:  <span id="user-choice"></span></h2>
+            </div>
+
+            <div id="result-box"><h2>Result:<span id="result"></span></h2></div>
+
+            <div class="scores-displayed">
+                <h2>Player Score:<span id="player-score">0</span></h2>
+                <h2>Computer Score: <span id="computer-score">0</span></h2>
+            </div>  
+
+        </div>
+
+        <div id="buttons">
+            <button class = btn id="rock"><img src="https://www.biography.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTc5NjIyODM0ODM2ODc0Mzc3/dwayne-the-rock-johnson-gettyimages-1061959920.jpg"></button>
+            <button class = btn id="paper">paper</button>
+            <button class = btn id="scissors">scissors</button>
+        </div>
+
+        <script src="app.js" charset="uft-8"></script>
     </div>
-    <script src="app.js" charset="uft-8"></script>
 </body>
 
 </html>

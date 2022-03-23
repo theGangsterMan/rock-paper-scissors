@@ -1,0 +1,48 @@
+html{
+    background-color: rgb(179, 166, 153);
+}
+
+.stuff{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.game-stats{
+    display: flex;
+}
+
+#buttons{
+    padding: 80px;
+}
+
+.btn{
+    font-size: 40px;
+}
+
+.choices-displayed,
+.scores-displayed,
+#result-box{
+    border-color: rgb(65, 65, 65);
+    border-width: 8px;
+    border-style: solid;
+}
+
+#result-box{
+    border-left-width: 0;
+    border-right-width: 0;
+}
+
+div.stuff > div{
+    padding: 50px;
+}
+
+div.game-stats > div{
+    padding: 50px;
+}
+
+img{
+    max-width:  100px;
+}
